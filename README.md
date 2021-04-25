@@ -72,7 +72,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project 
 <div align="center">
- <img src="images/screenshot2.png" alt="Logo" width="500" height="300">
+ <img src="images/screenshot2.png" alt="Logo" width="400" height="200">
   </div></br>
 proqratio® software is an application that is used to manage the day-to-day problems of companies. 
 With this application you can manage the Logistics department, the Sales department, the HR department, the Finance department, among others.
