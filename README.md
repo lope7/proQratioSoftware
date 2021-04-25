@@ -74,7 +74,7 @@
 <div align="center">
  <img src="images/screenshot2.png" alt="Logo" width="500" height="300">
   </div></br>
-**proqratio® software** is an application that is used to manage the day-to-day problems of companies. With this application you can manage the Logistics department, the Sales department, the HR department, the finance department, among others.
+proqratio® software is an application that is used to manage the day-to-day problems of companies. With this application you can manage the Logistics department, the Sales department, the HR department, the finance department, among others.
 Depending on the role that the user has in the company, they will have visibility to certain parts of the application.
 The administrator user will have visibility to all the functionalities of the application and will also be able to manage the users.
 
