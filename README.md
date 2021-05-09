@@ -92,6 +92,10 @@ proqratio® software is an application that is used to manage the day-to-day pro
 * [JSPDF](https://github.com/MrRio/jsPDF)
 * [JWT](https://jwt.io/)
 
+### Documentation
+https://jsdoc.app/
+* [JSDOC](https://jsdoc.app/)
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -111,9 +115,9 @@ To run the app locally just follow the next steps:
    ```
 * Run the app 
  ```sh
-   node server.js
+   npm run dev
    ```
-* Access your local server on 8080 port.
+* Access your local server on 3000 port.
 
 ### Prerequisites
 
@@ -138,7 +142,6 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-
 <!-- LICENSE -->
 ## License
 
@@ -151,3 +154,5 @@ Lope Martínez Alcalá - [@lopemaal](https://twitter.com/lopemaal) - martinezalc
 
 <!-- DEPLOYMENT -->
 ## Deployment
+This app has been deployed at Heroku.
+* [Go](https://proqratio-software.herokuapp.com/)
