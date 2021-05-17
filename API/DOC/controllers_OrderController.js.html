@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controllers/OrderController.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: controllers/OrderController.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import models from '../models';
+/**
+ * Method to increase the stock because of an order.
+ * @param {Number} idarticle identifier of the article.
+ * @param {Number} amount item units.
+ */
+async function increaseStock(idarticle, amount) {
+    let { stock } = await models.Article.findOne({ _id: idarticle });
+    let newStock = parseInt(stock) + parseInt(amount);
+    const reg = await models.Article.findByIdAndUpdate({ _id: idarticle }, { stock: newStock });
+}
+/**
+ * Method to decrease the stock beacuase of an order.
+ * @param {Number} idarticle identifier of the article.
+ * @param {Number} amount item units.
+ */
+async function decreaseStock(idarticle, amount) {
+    let { stock } = await models.Article.findOne({ _id: idarticle });
+    let newStock = parseInt(stock) - parseInt(amount);
+    const reg = await models.Article.findByIdAndUpdate({ _id: idarticle }, { stock: newStock });
+}
+/** 
+ * @module
+ */
+export default {
+    /**
+     * Method to add orders.
+     * @param {Object} req request to a serve.
+     * @param {Object} res indicate whether or not the API call was a success.
+     * @param {Function} next invokes the next middleware function.
+     * @return {void}  
+     */
+    add: async (req, res, next) => {
+        try {
+            const reg = await models.Order.create(req.body);
+            //Update stock
+            let details = req.body.details;
+            details.map(function (x) {
+                increaseStock(x._id, x.amount);
+            });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    },
+    /**
+     * Method to make a query and find an order.
+     * @param {Object} req request to a serve.
+     * @param {Object} res indicate whether or not the API call was a success.
+     * @param {Function} next invokes the next middleware function.
+     * @return {void} 
+     */
+    query: async (req, res, next) => {
+        try {
+            const reg = await models.Order.findOne({ _id: req.query._id })
+                .populate('user', { name: 1 })
+                .populate('person', { name: 1 });
+            if (!reg) {
+                res.status(404).send({
+                    message: 'The register doesn´t exist'
+                });
+            } else {
+                res.status(200).json(reg);
+            }
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    },
+    /**
+     * Method to list orders.
+     * @param {Object} req request to a serve.
+     * @param {Object} res indicate whether or not the API call was a success.
+     * @param {Function} next invokes the next middleware function.
+     * @return {void}  
+     */
+    list: async (req, res, next) => {
+        try {
+            let value = req.query.value;
+            const reg = await models.Order.find({ $or: [{ 'number_proof': new RegExp(value, 'i') }, { 'serial_proof': new RegExp(value, 'i') }] })
+                .populate('user', { name: 1 })
+                .populate('person', { name: 1 })
+                .sort({ 'createdAt': -1 });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    },
+    /**
+     * Method to activate an order.
+     * @param {Object} req request to a serve.
+     * @param {Object} res indicate whether or not the API call was a success.
+     * @param {Function} next invokes the next middleware function.
+     * @return {void}  
+     */
+    activate: async (req, res, next) => {
+        try {
+            const reg = await models.Order.findByIdAndUpdate({ _id: req.body._id }, { status: 1 });
+            //Update stock
+            let details = reg.details;
+            details.map(function (x) {
+                increaseStock(x._id, x.amount);
+            });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    },
+    /**
+     * Method to cancel an order.
+     * @param {Object} req request to a serve.
+     * @param {Object} res indicate whether or not the API call was a success.
+     * @param {Function} next invokes the next middleware function.
+     * @return {void} 
+     */
+    deactivate: async (req, res, next) => {
+        try {
+            const reg = await models.Order.findByIdAndUpdate({ _id: req.body._id }, { status: 0 });
+            //Update stock
+            let details = reg.details;
+            details.map(function (x) {
+                decreaseStock(x._id, x.amount);
+            });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    },
+    /**
+     * Method to make a query and find an order by date.
+     * @param {Object} req request to a serve.
+     * @param {Object} res indicate whether or not the API call was a success.
+     * @param {Function} next invokes the next middleware function.
+     * @return {void} 
+     */
+    queryDate: async (req, res, next) => {
+        try {
+            let start = req.query.start;
+            let end = req.query.end;
+            const reg = await models.Order.find({ "createdAt": { "$gte": start, "$lt": end } })
+                .populate('user', { name: 1 })
+                .populate('person', { name: 1 })
+                .sort({ 'createdAt': -1 });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    },
+    /**
+    * Method to delete cancelled orders.
+    * @param {Object} req request to a serve.
+    * @param {Object} res indicate whether or not the API call was a success.
+    * @param {Function} next invokes the next middleware function.
+    * @return {void} 
+    */
+    removeOrders: async (req, res, next) => {
+        try {
+            const reg = await models.Order.deleteMany({ 'status': 0 });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Error'
+            });
+            next(e);
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-controllers_ArticleController.html">controllers/ArticleController</a></li><li><a href="module-controllers_BankController.html">controllers/BankController</a></li><li><a href="module-controllers_CategorieController.html">controllers/CategorieController</a></li><li><a href="module-controllers_LoanController.html">controllers/LoanController</a></li><li><a href="module-controllers_MeetingController.html">controllers/MeetingController</a></li><li><a href="module-controllers_OrderController.html">controllers/OrderController</a></li><li><a href="module-controllers_PersonController.html">controllers/PersonController</a></li><li><a href="module-controllers_SaleController.html">controllers/SaleController</a></li><li><a href="module-controllers_UserController.html">controllers/UserController</a></li><li><a href="module-middlewares_auth.html">middlewares/auth</a></li><li><a href="module-services_token.html">services/token</a></li></ul><h3>Global</h3><ul><li><a href="global.html#articleSchema">articleSchema</a></li><li><a href="global.html#bankSchema">bankSchema</a></li><li><a href="global.html#categorieSchema">categorieSchema</a></li><li><a href="global.html#checkToken">checkToken</a></li><li><a href="global.html#decreaseStock">decreaseStock</a></li><li><a href="global.html#increaseStock">increaseStock</a></li><li><a href="global.html#loanSchema">loanSchema</a></li><li><a href="global.html#meetingSchema">meetingSchema</a></li><li><a href="global.html#orderSchema">orderSchema</a></li><li><a href="global.html#personSchema">personSchema</a></li><li><a href="global.html#saleSchema">saleSchema</a></li><li><a href="global.html#userSchema">userSchema</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Mon May 17 2021 11:46:39 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

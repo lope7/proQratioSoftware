@@ -1,0 +1,16 @@
+{
+    "plugins":[],
+    "source": {
+        "include":["controllers","middlewares","models","services"],
+        "includePattern":".js$",
+        "excludePattern":"(node_modules|docs)"
+    },
+    "templates":{
+        "cleverLinks":false,
+        "monspaceLinks":false
+    },
+    "opts":{
+        "recurse":"true",
+        "destination":"./documentation"
+    }
+}
