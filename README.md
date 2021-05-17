@@ -144,7 +144,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- DEPLOYMENT -->
 ## Deployment
 This app has been deployed at Heroku.  
-[Go](https://proqratio-software.herokuapp.com/)
+[Go](https://proqratiosoftware.herokuapp.com/)
 
 <!-- LICENSE -->
 ## License
