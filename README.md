@@ -111,7 +111,7 @@ To run the app locally just follow the next steps:
    ```
 * Go to server directory
  ```sh
-   cd /backend
+   cd /API
    ```
 * Run the app 
  ```sh
