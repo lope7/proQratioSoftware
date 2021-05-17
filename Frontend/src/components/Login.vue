@@ -342,7 +342,7 @@ export default {
   methods: {
     /**
      * @vuese
-     * Method that checks the password and email of the user who wants to enter the system.
+     * Method that checks the password and email of the user.
      */
     login() {
       axios
