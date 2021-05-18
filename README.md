@@ -85,11 +85,14 @@ proqratio® software is an application that is used to manage the day-to-day pro
 * [Vuejs](https://vuejs.org/)
 * [Nodejs](https://nodejs.org/es/)
 * [Express](https://expressjs.com/)
-* [Vuetify](https://vuetifyjs.com/en/)
 
 ### Database
 * [MongoDB](https://www.mongodb.com/)
 * [MongoAtlas](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_emea_spain_search_core_brand_atlas_desktop&utm_term=mongo%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624563&gclid=CjwKCAjwy42FBhB2EiwAJY0yQn6Za331GuXfYFYlCQtiF900YWVYxg5xalr0PP_KtywOyKy3XuUSIBoCRMIQAvD_BwE/)
+
+### Design
+* [Vuetify](https://vuetifyjs.com/en/)
+* [AdobeXd](https://www.adobe.com/es/products/xd.html)
 
 ### Libraries
 * [Vue-moment](https://www.npmjs.com/package/vue-moment)
