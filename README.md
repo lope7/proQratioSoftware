@@ -82,7 +82,9 @@ proqratio® software is an application that is used to manage the day-to-day pro
 ## :rocket: Built With
 
 ### Technologies
+Frontend  
 * [Vuejs](https://vuejs.org/)
+Backend  
 * [Nodejs](https://nodejs.org/es/)
 * [Express](https://expressjs.com/)
 
@@ -92,7 +94,8 @@ proqratio® software is an application that is used to manage the day-to-day pro
 
 ### Design
 * [Vuetify](https://vuetifyjs.com/en/)
-* [AdobeXd](https://www.adobe.com/es/products/xd.html)
+* [AdobeXD](https://www.adobe.com/es/products/xd.html)
+* [Inkscape](https://inkscape.org/es/)
 
 ### Libraries
 * [Vue-moment](https://www.npmjs.com/package/vue-moment)
