@@ -70,7 +70,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project 
+## :bar_chart: About The Project 
 <div align="center">
  <img src="images/screenshot2.png" alt="Logo" width="400" height="200">
   </div></br>
