@@ -137,10 +137,11 @@ To run the app locally just follow the next steps:
 
 ### :scroll: Prerequisites
 
-Get NodeJS.  
-Get MongoDB.  
-Get Express.  
-Get Vuejs.  
+To run the app you need to get:  
+NodeJS.    
+MongoDB.   
+Express.  
+Vuejs.  
 
 * npm
   ```sh
