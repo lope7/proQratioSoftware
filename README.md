@@ -79,7 +79,7 @@ proqratio® software is an application that is used to manage the day-to-day pro
  Depending on the role that the user has in the company, they will have visibility to certain parts of the application. 
  The administrator user will have visibility to all the functionalities of the application and will also be able to manage the users. 
 
-### Built With
+### :rocket Built With
 
 * [Vuejs](https://vuejs.org/)
 * [Nodejs](https://nodejs.org/es/)
