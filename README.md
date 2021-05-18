@@ -70,7 +70,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## :bar_chart: About The Project 
+## :basecampy: About The Project 
 <div align="center">
  <img src="images/screenshot2.png" alt="Logo" width="400" height="200">
   </div></br>
