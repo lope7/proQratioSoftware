@@ -138,15 +138,15 @@ To run the app locally just follow the next steps:
 ### :scroll: Prerequisites
 
 To run the app you need to get:  
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```  
+  
 NodeJS.    
 MongoDB.   
 Express.  
 Vuejs.  
-
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 <!-- CONTRIBUTING -->
 ## :bulb: Contributing
