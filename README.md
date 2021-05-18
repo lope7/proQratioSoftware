@@ -150,11 +150,11 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 <!-- LICENSE -->
-## License
+## :page_facing_up:License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
-## Contact
+## :email: Contact
 
 Lope Martínez Alcalá - [@lopemaal](https://twitter.com/lopemaal) - martinezalcala@hotmail.com
