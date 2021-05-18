@@ -105,7 +105,7 @@ proqratio® software is an application that is used to manage the day-to-day pro
 [App link](https://proqratiosoftware.herokuapp.com/)
 
 <!-- GETTING STARTED -->
-## Getting Started
+## :file_folder: Getting Started
 
 ### Installation
 
@@ -127,11 +127,12 @@ To run the app locally just follow the next steps:
    ```
 * Access your local server on 3000 port.
 
-### Prerequisites
+### :scroll: Prerequisites
 
 Get NodeJS.
 Get MongoDB.
-Get Express
+Get Express.
+Get Vuejs.
 
 * npm
   ```sh
@@ -139,7 +140,7 @@ Get Express
   ```
 
 <!-- CONTRIBUTING -->
-## Contributing
+## :bulb: Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
