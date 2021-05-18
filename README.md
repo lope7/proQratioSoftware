@@ -83,7 +83,7 @@ proqratio® software is an application that is used to manage the day-to-day pro
 
 ### Technologies
 Frontend  
-* [Vuejs](https://vuejs.org/)
+* [Vuejs](https://vuejs.org/)  
 Backend  
 * [Nodejs](https://nodejs.org/es/)
 * [Express](https://expressjs.com/)
