@@ -82,9 +82,11 @@ proqratio® software is an application that is used to manage the day-to-day pro
 ## :rocket: Built With
 
 ### Technologies
-Frontend  
+ Frontend  
 * [Vuejs](https://vuejs.org/)  
+
 Backend  
+
 * [Nodejs](https://nodejs.org/es/)
 * [Express](https://expressjs.com/)
 
