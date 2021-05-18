@@ -100,7 +100,7 @@ proqratio® software is an application that is used to manage the day-to-day pro
 * [JSDOC](https://jsdoc.app/)
 
 ### Deployment
-* [Heroku](https://www.heroku.com/) 
+* [Heroku](https://www.heroku.com/)   
 [App link](https://proqratiosoftware.herokuapp.com/)
 
 <!-- GETTING STARTED -->
