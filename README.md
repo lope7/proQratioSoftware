@@ -142,12 +142,21 @@ To run the app you need to get:
   ```sh
   npm install npm@latest -g
   ```  
-  
-NodeJS.    
-MongoDB.   
-Express.  
-Vuejs.  
-
+* NodeJS.    
+ [Download](https://nodejs.org/es/download/)  
+ 
+* MongoDB.   
+ ```sh
+npm install mongodb --save
+  ```  
+* Express.  
+ ```sh
+npm install express
+  ```  
+* Vuejs.  
+ ```sh
+npm install -g @vue/cli
+  ```  
 <!-- CONTRIBUTING -->
 ## :bulb: Contributing
 
