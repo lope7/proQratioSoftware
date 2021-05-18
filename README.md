@@ -110,7 +110,7 @@ Backend
 
 ### Deployment
 * [Heroku](https://www.heroku.com/)   
-[App link](https://proqratiosoftware.herokuapp.com/)
+https://proqratiosoftware.herokuapp.com
 
 <!-- GETTING STARTED -->
 ## :file_folder: Getting Started
