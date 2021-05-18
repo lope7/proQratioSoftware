@@ -99,6 +99,10 @@ proqratio® software is an application that is used to manage the day-to-day pro
 * [Vuese](https://vuese.org/)
 * [JSDOC](https://jsdoc.app/)
 
+### Deployment
+* [Heroku](https://www.heroku.com/) 
+[App link](https://proqratiosoftware.herokuapp.com/)
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -143,11 +147,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<!-- DEPLOYMENT -->
-## Deployment
-This app has been deployed at Heroku.  
-[Go](https://proqratiosoftware.herokuapp.com/)
 
 <!-- LICENSE -->
 ## License
